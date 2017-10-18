@@ -2,21 +2,18 @@ const Discord = require('discord.js');
 
 const client = new Discord.Client();
 
+// Joins the voice channel as soon as the client starts up
 client.on('ready', () => {
-  console.log('Ready!');
+  // Get the channel via ID
+  let channel = client.channels.get('368449033003597834');
+
+  channel.join()
+  .then(connection => console.log('Connected'))
+  .catch(console.error);
 });
 
 client.on('message', message => {
-  if (message.content === '!play') {
-    // Note that this will only work if the message was sent in a guild
-    // and the author is actually in a voice channel.
-    // You might want to check for all that stuff first
-    const channel = message.member.voiceChannel;
-
-    channel.join()
-    .then(connection => console.log('Connected!'))
-    .catch(console.error);
-  }
+  //...
 });
 
 client.login('BOT_TOKEN');
