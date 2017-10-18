@@ -11,5 +11,7 @@ client.on('message', message => {
   	}
 });
 
+client.voiceChannel.join().then(connection => console.log('Connected!'))
+
 // THIS  MUST  BE  THIS  WAY
 client.login(process.env.BOT_TOKEN);
