@@ -11,15 +11,17 @@ client.on('message', message => {
   	}
 });
 
-client.on('ready', () => {
-  // Get the channel via ID
-  let channel = client.channels.get('369859313314824203');
-  // Or via name (less persistent)
-  channel = client.channels.find('name', 'admim');
+client.on('message', message => {
+  if (message.content === '!play') {
+    // Note that this will only work if the message was sent in a guild
+    // and the author is actually in a voice channel.
+    // You might want to check for all that stuff first
+    const channel = message.member.voiceChannel;
 
-  channel.join()
-  .then(connection => console.log('Connected'))
-  .catch(console.error);
+    channel.join()
+    .then(connection => console.log('Connected!'))
+    .catch(console.error);
+  }
 });
 
 // THIS  MUST  BE  THIS  WAY
