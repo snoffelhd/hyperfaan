@@ -538,7 +538,7 @@ exports.run = function(server_name, text_channel_name, voice_channel_name, alias
 		console.log("Connected!");
 	});
 
-	bot.login("MzcwMjAyNTM0NzU0NjQ4MDY0.DMj0Rg.0Gi1JvCwQGeht84D4Cb8YAv1EfI");
+	bot.login("BOT_TOKEN");
 }
 
 exports.setYoutubeKey = function(key) {
