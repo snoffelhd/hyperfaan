@@ -538,9 +538,11 @@ exports.run = function(server_name, text_channel_name, voice_channel_name, alias
 		console.log("Connected!");
 	});
 
-	bot.login(BOT_TOKEN);
+	bot.login(token);
 }
 
 exports.setYoutubeKey = function(key) {
 	yt_api_key = key;
 }
+
+client.login(process.env.BOT_TOKEN);
